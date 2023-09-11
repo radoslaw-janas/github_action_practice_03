@@ -1,0 +1,20 @@
+name: first workflow
+on:  [workflow_dispatch, push]
+jobs:
+    run_project_tests:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: upload code to github runner
+                uses: actions/checkout@v4
+            -   name: install depencendies
+                run: npm ci 
+            -   name: run lints
+                run: npm run lint
+            -   name: run tests
+                run: npm run test
+            -   name: build node
+                run: npm run build
+            -   name: deploy code
+                run: echo "Deploying ..."
+
+        
