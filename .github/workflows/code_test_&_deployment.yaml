@@ -4,17 +4,17 @@ jobs:
     run_project_tests:
         runs-on: ubuntu-latest
         steps:
-            -   name: upload code to github runner
+            -   name: Upload code to github runner
                 uses: actions/checkout@v4
-            -   name: install depencendies
+            -   name: Install depencendies
                 run: npm ci 
-            -   name: run lints
+            -   name: Run lints
                 run: npm run lint
-            -   name: run tests
+            -   name: Run tests
                 run: npm run test
-            -   name: build node
+            -   name: Build code
                 run: npm run build
-            -   name: deploy code
+            -   name: Deploy code
                 run: echo "Deploying ..."
 
         
